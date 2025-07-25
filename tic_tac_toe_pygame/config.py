@@ -2,13 +2,14 @@
 Configuration settings for the Tic Tac Toe game using Pygame.
 """
 # Pygame configuration
-WINDOW_SIZE = (640, 480)
+WINDOW_SIZE = (720, 480)
 FPS = 60
 
 # Grid configuration
 GRID_SIZE = 3
 CELL_SIZE = WINDOW_SIZE[1] // GRID_SIZE
 
+LINE_WIDTH = 5
 # Color definitions
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)

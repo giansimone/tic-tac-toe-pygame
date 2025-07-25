@@ -44,7 +44,7 @@ class EventHandler:
             case pygame.KEYDOWN:
                 match event.key:
                     case pygame.K_r:
-                        self.game_state.reset()
+                        self.game_state.reset_game()
                     case pygame.K_ESCAPE:
                         self.game_state.running = False
                 return

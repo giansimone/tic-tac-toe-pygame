@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tic-tac-toe-pygame"
-version = "0.2.0"
+version = "0.3.0"
 description = "A Python implementation of the Tic-Tac-Toe game using Pygame."
 authors = ["Giansimone Perrino <hello@giansimone.dev>"]
 license = "MIT"
