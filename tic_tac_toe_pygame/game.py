@@ -5,9 +5,21 @@ import sys
 
 import pygame
 
-from tic_tac_toe_pygame.config import WINDOW_SIZE, GRID_SIZE, CELL_SIZE, LINE_WIDTH, BLACK, WHITE, FPS
 from tic_tac_toe_pygame.state import GameState
 from tic_tac_toe_pygame.event import EventHandler
+from tic_tac_toe_pygame.config import (
+    WINDOW_SIZE,
+    GRID_SIZE,
+    CELL_SIZE,
+    LINE_WIDTH,
+    MARKER_SIZE,
+    FONT_SIZE,
+    BACKGROUND_RGB,
+    LINES_COLOUR,
+    MARKERS_RGB,
+    TEXT_RGB,
+    FPS
+)
 
 
 class TicTacToe:
@@ -35,8 +47,8 @@ class TicTacToe:
         """Draw the Tic-Tac-Toe grid."""
         for i in range(0, GRID_SIZE + 1):
             pos = i * CELL_SIZE
-            pygame.draw.line(self.screen, BLACK, (pos, 0), (pos, WINDOW_SIZE[1]), LINE_WIDTH)
-            pygame.draw.line(self.screen, BLACK, (0, pos), (WINDOW_SIZE[1], pos), LINE_WIDTH)
+            pygame.draw.line(self.screen, LINES_COLOUR, (pos, 0), (pos, WINDOW_SIZE[1]), LINE_WIDTH)
+            pygame.draw.line(self.screen, LINES_COLOUR, (0, pos), (WINDOW_SIZE[1], pos), LINE_WIDTH)
 
     def draw_markers(self):
         """Draw the markers (X and O) on the board."""
@@ -48,14 +60,14 @@ class TicTacToe:
                     x = col * CELL_SIZE + CELL_SIZE // 2
                     y = row * CELL_SIZE + CELL_SIZE // 2
                     font = pygame.font.Font(None, 74)
-                    text = font.render(marker, True, BLACK)
+                    text = font.render(marker, True, MARKERS_RGB)
                     text_rect = text.get_rect(center=(x, y))
                     self.screen.blit(text, text_rect)
 
     def draw_game_status(self):
         """Draw the current game status."""
-        font = pygame.font.Font(None, 72)
-        text = font.render(f'{self.game_state.current_player}', True, BLACK)
+        font = pygame.font.Font(None, MARKER_SIZE)
+        text = font.render(f'{self.game_state.current_player}', True, TEXT_RGB)
         x = WINDOW_SIZE[1] + (WINDOW_SIZE[0] - WINDOW_SIZE[1]) // 2
         y = WINDOW_SIZE[1] // 6
         text_rect = text.get_rect(center=(x, y))
@@ -68,11 +80,11 @@ class TicTacToe:
 
     def draw_game_over(self):
         """Draw the game over message."""
-        font = pygame.font.Font(None, 48)
+        font = pygame.font.Font(None, FONT_SIZE)
         if self.game_state.winner == 'Draw':
-            text = font.render('Draw!', True, BLACK)
+            text = font.render('Draw!', True, TEXT_RGB)
         else:
-            text = font.render(f'{self.game_state.winner} Wins!', True, BLACK)
+            text = font.render(f'{self.game_state.winner} Wins!', True, TEXT_RGB)
         x = WINDOW_SIZE[1] + (WINDOW_SIZE[0] - WINDOW_SIZE[1]) // 2
         y = WINDOW_SIZE[1] // 6
         text_rect = text.get_rect(center=(x, y))
@@ -80,7 +92,7 @@ class TicTacToe:
 
     def render(self):
         """ Render the game state to the screen. """
-        self.screen.fill(WHITE)
+        self.screen.fill(BACKGROUND_RGB)
         self.draw_board()
         if self.game_state.game_over:
             self.draw_game_over()

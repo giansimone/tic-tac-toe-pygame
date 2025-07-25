@@ -8,11 +8,19 @@ FPS = 60
 # Grid configuration
 GRID_SIZE = 3
 CELL_SIZE = WINDOW_SIZE[1] // GRID_SIZE
+LINE_WIDTH = 3
 
-LINE_WIDTH = 5
+# Marker size
+MARKER_SIZE = CELL_SIZE // 2
+
+# Font size for text rendering
+FONT_SIZE = CELL_SIZE // 3
+
 # Color definitions
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
+BACKGROUND_RGB = (0, 0, 0)
+LINES_COLOUR = (255, 95, 31)
+MARKERS_RGB = (255, 255, 255)
+TEXT_RGB = (255, 255, 255)
 
 # Winning combinations for Tic Tac Toe
 WINNING_COMBINATIONS = [

@@ -27,6 +27,8 @@ class EventHandler:
         """
         x = pos[0] // CELL_SIZE
         y = pos[1] // CELL_SIZE
+        if x>= GRID_SIZE or y >= GRID_SIZE:
+            return
         position = y * GRID_SIZE + x + 1
         if self.game_state.board.update(position, self.game_state.current_player):
             self.game_state.update()
@@ -54,6 +56,4 @@ class EventHandler:
                     return
                 pos = pygame.mouse.get_pos()
                 self.handle_mouse_click(pos)
-                return
-            case _:
                 return
