@@ -4,6 +4,8 @@
 
 # tic-tac-toe-pygame
 
+![Tic-Tac-Toe game screenshot](assets/tictactoe-screenshot.png)
+
 A Python implementation of the Tic-Tac-Toe game using Pygame.
 
 ## Overview
