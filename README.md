@@ -2,7 +2,7 @@
 [![PyPI](https://badge.fury.io/py/tic-tac-toe-pygame.svg)](https://badge.fury.io/py/tic-tac-toe-pygame)
 [![License](https://img.shields.io/github/license/giansimone/tic-tac-toe-pygame)](https://github.com/giansimone/tic-tac-toe-pygame/blob/main/LICENSE)
 
-# tic-tac-toe-pygame
+# Tic-Tac-Toe Game (Pygame) 
 
 ![Tic-Tac-Toe game screenshot](assets/tictactoe-screenshot.png)
 
